@@ -23,14 +23,16 @@
           padding: 8px 8px 8px 32px;
           text-decoration: none;
           font-size: 60px;
-          color: #818181;
           display: block;
           transition: 0.3s;
+          color: var(--tg-theme-button-color);
+          background: var(--tg-theme-button-text-color);
         }
 
         /* When you mouse over the navigation links, change their color */
         .sidenav a:hover {
-          color: #f1f1f1;
+          color: var(--tg-theme-secondary-color);
+          background: var(--tg-theme-secondary-bg-color);
         }
 
         /* Position and style the close button (top right corner) */
@@ -57,7 +59,6 @@
         button {
             border: 0;
             border-radius: 5px;
-            background-image: url();
             margin-top: 10px;
             height: 30px;
             width: 100px;
@@ -78,7 +79,7 @@
             }
 
         .bar1, .bar2, .bar3 {
-            width: 100px;
+            width: 140px;
             height: 20px;
             background-color: #333;
             margin: 20px 0;
@@ -100,8 +101,9 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/index.html">Основ</a>
-        <a href="/recom.html">Рекомендовать</a>
+        <a href="https://ivansalou288-tech.github.io/web_admin_bot.github.io/recom">Рекомендовать</a>
+        <a href="https://ivansalou288-tech.github.io/web_admin_bot.github.io/reset_dk">Изменить ранг</a>
+
       </div>
       
       <!-- Use any element to open the sidenav -->
@@ -121,10 +123,6 @@
         let navig = document.getElementById('open_nav');
         navig.addEventListener('click', () => openNav());
 
-        // function myFunction(x) {
-        // x.classList.toggle("change");
-        // openNav();
-        // }
 
         /* Set the width of the side navigation to 250px */
         function openNav() {
