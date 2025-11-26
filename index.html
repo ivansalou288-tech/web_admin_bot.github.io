@@ -1,209 +1,141 @@
-
-<!--Design by foolishdeveloper.com-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Title</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-        *{
-          list-style: none;
-          text-decoration: none;
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Open Sans', sans-serif;
-        }
-
-        body{
-          background: #f5f6fa;
-        }
-
-        .wrapper .sidebar{
-          background: rgb(5, 68, 104);
-          position: fixed;
-          top: 0;
+        /* The side navigation menu */
+        .sidenav {
+          height: 100%; /* 100% Full-height */
+          width: 0; /* 0 width - change this with JavaScript */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Stay on top */
+          top: 0; /* Stay at the top */
           left: 0;
-          width: 225px;
-          height: 100%;
-          padding: 20px 0;
-          transition: all 0.5s ease;
+          background-color: #111; /* Black*/
+          overflow-x: hidden; /* Disable horizontal scroll */
+          padding-top: 60px; /* Place content 60px from the top */
+          transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
         }
 
-        .wrapper .sidebar .profile{
-          margin-bottom: 30px;
-          text-align: center;
-        }
-
-        .wrapper .sidebar .profile img{
+        /* The navigation menu links */
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
           display: block;
-          width: 100px;
-          height: 100px;
-            border-radius: 50%;
-          margin: 0 auto;
+          transition: 0.3s;
         }
 
-        .wrapper .sidebar .profile h3{
-          color: #ffffff;
-          margin: 10px 0 5px;
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+          color: #f1f1f1;
         }
 
-        .wrapper .sidebar .profile p{
-          color: rgb(206, 240, 253);
-          font-size: 14px;
+        /* Position and style the close button (top right corner) */
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
         }
 
-        .wrapper .sidebar ul li a{
-          display: block;
-          padding: 13px 30px;
-          border-bottom: 1px solid #10558d;
-          color: rgb(241, 237, 237);
-          font-size: 16px;
-          position: relative;
+        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+        #main {
+          transition: margin-left .5s;
+          padding: 20px;
         }
 
-        .wrapper .sidebar ul li a .icon{
-          color: #dee4ec;
-          width: 30px;
-          display: inline-block;
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
         }
 
-
-
-        .wrapper .sidebar ul li a:hover,
-        .wrapper .sidebar ul li a.active{
-          color: #0c7db1;
-
-          background:white;
-            border-right: 2px solid rgb(5, 68, 104);
+        button {
+            border: 0;
+            border-radius: 5px;
+            background-image: url();
+            margin-top: 10px;
+            height: 30px;
+            width: 100px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
         }
 
-        .wrapper .sidebar ul li a:hover .icon,
-        .wrapper .sidebar ul li a.active .icon{
-          color: #0c7db1;
-        }
+        .container {
+            display: inline-block;
+            cursor: pointer;
+            }
 
-        .wrapper .sidebar ul li a:hover:before,
-        .wrapper .sidebar ul li a.active:before{
-          display: block;
-        }
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+            }
 
-        .wrapper .section{
-          width: calc(100% - 225px);
-          margin-left: 225px;
-          transition: all 0.5s ease;
-        }
+        .change .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+            }
 
-        .wrapper .section .top_navbar{
-          background: rgb(7, 105, 185);
-          height: 50px;
-          display: flex;
-          align-items: center;
-          padding: 0 30px;
+        .change .bar2 {opacity: 0;}
 
-        }
+        .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+            }
 
-        .wrapper .section .top_navbar .hamburger a{
-          font-size: 28px;
-          color: #f4fbff;
-        }
-
-        .wrapper .section .top_navbar .hamburger a:hover{
-          color: #a2ecff;
-        }
-
-         .wrapper .section .container{
-          margin: 30px;
-          background: #fff;
-          padding: 50px;
-          line-height: 28px;
-        }
-
-        body.active .wrapper .sidebar{
-          left: -225px;
-        }
     </style>
 </head>
 <body>
-
-    <div class="wrapper">
-       <div class="section">
-    <div class="top_navbar">
-      <div class="hamburger">
-        <a href="#">
-          <i class="fas fa-bars"></i>
-        </a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/index.html">Основ</a>
+        <a href="/recom.html">Рекомендовать</a>
       </div>
-    </div>
-    <div class="container">
+      
+      <!-- Use any element to open the sidenav -->
 
-    </div>
-  </div>
-        <div class="sidebar">
-            <div class="profile">
-                <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="profile_picture">
-                <h3>Anamika Roy</h3>
-                <p>Designer</p>
-            </div>
-            <ul>
-                <li>
-                    <a href="#" class="active">
-                        <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-desktop"></i></span>
-                        <span class="item">My Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-user-friends"></i></span>
-                        <span class="item">People</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                        <span class="item">Perfomance</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-database"></i></span>
-                        <span class="item">Development</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <span class="item">Reports</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-user-shield"></i></span>
-                        <span class="item">Admin</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fas fa-cog"></i></span>
-                        <span class="item">Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+      <div class="container" onclick="openNav()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+      <div id="main">
+      </div>
+      <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+      <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        let navig = document.getElementById('open_nav');
+        navig.addEventListener('click', () => openNav());
 
-    </div>
+        // function myFunction(x) {
+        // x.classList.toggle("change");
+        // openNav();
+        // }
 
+        /* Set the width of the side navigation to 250px */
+        function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 */
+        function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+
+        }
+      </script>
 </body>
 </html>
