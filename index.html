@@ -15,15 +15,18 @@
         
         .square {
 
-            width: 40%;
+            /* top: 50%;
+            left: 50%;
+            margin: -125px 0 0 -125px; */
+            width: 150px;
             height: 200px;
             border-radius: 20px;
-            box-shadow:  5px 5px 10px 10px rgba(0, 0, 0, 0.6);
+            /* box-shadow:  5px 5px 10px 10px rgba(0, 0, 0, 0.6); */
             margin-top: 50px;
             margin-left: 25px;
-            left: 5%;
+
             transition: 0.5s;
-            background-color: rgb(14, 14, 14);
+            background-color: #191919;
            /* background: url('https://i.pinimg.com/originals/f0/08/df/f008df2e91578475b2c61db885581b72.jpg') no-repeat center center fixed;
             -webkit-background-size: 100% 100%;
             -moz-background-size: 100% 100%;
@@ -35,19 +38,16 @@
             width: 90%;
             height: 200px;
             border-radius: 20px;
-            background: url('https://i.pinimg.com/originals/f0/08/df/f008df2e91578475b2c61db885581b72.jpg') no-repeat center center fixed;
-            -webkit-background-size: 100% 100%;
-            -moz-background-size: 100% 100%;
-            -o-background-size: 100% 100%;
-            background-size: 100% 100%;
+            background: #191919;
+
             box-shadow:  5px 5px 10px 10px rgba(0, 0, 0, 0.6);
-            margin-top: 10%;
+            margin-top: 20px;
             margin-left: 20px;
 
         }
 
         .square:hover {
-            width: 35%;
+            width: 130px;
             height: 180px;
             margin-top: 60px;
             margin-left: 35px;
@@ -56,10 +56,17 @@
         }
 
 
+        #main-scr{
+            position: absolute;
+            background-color: #000000;
+            left: 35%;
+            margin: -125px 0 0 -125px;
+            top: 200px;
+            width: 400px;
+            height: 100%;
 
-        #main {
-            display: block;
         }
+
         #recom {
             display: none;
         }
@@ -69,16 +76,18 @@
     </style>
 </head>
 <body>
+    <!--#3B3B3B-->
     <!-- Основной экран-->
-    <div id="main"></div>
-        <div class="big-square"></div>
-        <div style="display: flex;">
-            <div class="square"></div>
-            <div class="square"></div>
+    <div id="main-scr">
 
-            
-        </div>
-        <button id="recom"></button>
+            <div class="big-square"></div>
+            <div style="display: flex;">
+                <div class="square"></div>
+            </div>
+   
+
+    </div>
+    <button id="recom"></button>
     <!--Раздел рекомендации-->
     <!--Раздел Изменения дк-->
 
